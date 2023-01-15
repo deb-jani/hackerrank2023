@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int n,i,maximum=0,temp=0;
+        n=sc.nextInt();
+        sc.close();
+        char[] binary=Integer.toBinaryString(n).toCharArray();
+        for(i=0;i<binary.length;i++)
+        {
+            temp=(binary[i]=='0')?0:temp+1;
+            if(temp>maximum)
+            {
+                maximum=temp;
+            }
+        }
+        System.out.println(maximum);
+    }
+}
