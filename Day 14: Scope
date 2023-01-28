@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Difference
+{
+    int[] ele;
+    int maxdiff;
+    public Difference(int[] ele)
+    {
+        this.ele=ele;
+    }
+    void calculate()
+    {
+        int n=ele.length;
+        Arrays.sort(ele);
+        maxdiff=Math.abs(ele[n-1]-ele[0]);
+    }
+}
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i<n;i++)
+            a[i]=sc.nextInt();
+        sc.close();
+        Difference ob=new Difference(a);
+        ob.calculate();
+        System.out.println(ob.maxdiff);
+    }
+}
