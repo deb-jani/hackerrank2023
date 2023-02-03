@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+import java.text.*;
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int aday=sc.nextInt();
+        int amonth=sc.nextInt();
+        int ayear=sc.nextInt();
+        int eday=sc.nextInt();
+        int emonth=sc.nextInt();
+        int eyear=sc.nextInt();
+        int fine;
+        if(ayear<=eyear)
+        {
+            if(amonth<=emonth)
+            {
+                if(aday<=eday)
+                {
+                    fine=0;
+                }
+                else
+                {
+                    fine=(aday-eday)*15;
+                }
+            }
+            else
+            {
+                fine=(amonth-emonth)*500;
+            }
+        }
+        else
+        {    
+            fine=10000;
+        }
+        System.out.println(fine);
+        sc.close();
+    }
+}
